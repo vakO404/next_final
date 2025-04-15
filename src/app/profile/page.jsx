@@ -36,14 +36,6 @@ const Profile = async () => {
           <p>გვარი: </p>
           <p>{profile.lastName}</p>
         </div>
-        <div className={styles.infoWrapper}>
-          <p>გვარი: </p>
-          <p>{profile.lastName}</p>
-        </div>
-        <div className={styles.infoWrapper}>
-          <p>გვარი: </p>
-          <p>{profile.lastName}</p>
-        </div>
       </section>
     </div>
   );
