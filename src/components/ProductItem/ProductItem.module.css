@@ -36,8 +36,8 @@
     height: 80px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;  
     font-weight: 400;
     color: rgb(124, 124, 124);
     margin-top: 20px;
@@ -73,3 +73,4 @@
       padding-top: 4px;
   
   }
+

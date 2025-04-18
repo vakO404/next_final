@@ -1,0 +1,20 @@
+.wrapper {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top : 10rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap : 20px;
+  }
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.img{
+    width: 20vh;
+    height: 23vh ;
+}
