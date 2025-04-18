@@ -1,0 +1,10 @@
+.itemContainer {
+  height: 380px;
+  width: 240px;
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.itemContainer{
+    background-color: red;
+}
