@@ -14,6 +14,10 @@ export default function Home() {
     return setLogin(!login);
   };
 
+  const handleSignupChange =() => {
+    return setLogin(false)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -70,12 +74,34 @@ export default function Home() {
             </button>
           </>
         ) : (
+
           <>
             <h3 className={styles.signin}>Sign Up</h3>
             <button
-              onClick={handleLoginChange}
+              onClick={handleSignupChange}
               className={styles.notResgitered}
             >
+
+
+              <input
+              onChange={(event) => {
+                return setUsername(event.target.value);
+              }}
+              className={styles.input}
+              placeholder="username"
+            />
+            <input
+              onChange={(event) => {
+                return setPassword(event.target.value);
+              }}
+              className={styles.input}
+              type="password"
+              placeholder="password"
+            />
+            <button className={styles.button} type="submit">
+              Sign Up
+            </button>
+
               Already Registered? sign in
             </button>
           </>
