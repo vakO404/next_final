@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [login, setLogin] = useState(true);
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,10 +14,6 @@ export default function Home() {
   const handleLoginChange = () => {
     return setLogin(!login);
   };
-
-  const handleSignupChange =() => {
-    return setLogin(false)
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,17 +24,56 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           username: username,
-          password: "m38rmF$",
+          password: password,
         }),
       })
         .then((res) => res.json())
         .then((res) => {
           if (res.token) {
-            router.replace("/products", {path: 'products'});
+            router.replace("/products", { path: "products" });
           }
         });
     } catch (error) {
       console.log(error.message);
+    }
+  };
+
+  const handleSignup = () => {
+    try {
+      fetch("https://fakestoreapi.com/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          username,
+          password,
+          name: {
+            firstname: "john",
+            lastname: "doe",
+          },
+          address: {
+            city: "kilcoole",
+            street: "new road",
+            number: 7682,
+            zipcode: "12926-3874",
+            geolocation: {
+              lat: "-37.3159",
+              long: "81.1496",
+            },
+          },
+          phone: "1-570-236-7033",
+        }),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          if (res.id) {
+            router.replace("/products");
+          } else {
+            alert("Signup failed");
+          }
+        });
+    } catch (err) {
+      console.log(err.message);
     }
   };
 
@@ -49,16 +85,12 @@ export default function Home() {
             <h3 className={styles.signin}>Sign In</h3>
             <p className={styles.desc}>please sign in to access market.</p>
             <input
-              onChange={(event) => {
-                return setUsername(event.target.value);
-              }}
+              onChange={(event) => setUsername(event.target.value)}
               className={styles.input}
               placeholder="username"
             />
             <input
-              onChange={(event) => {
-                return setPassword(event.target.value);
-              }}
+              onChange={(event) => setPassword(event.target.value)}
               className={styles.input}
               type="password"
               placeholder="password"
@@ -68,46 +100,45 @@ export default function Home() {
             </button>
             <button
               onClick={handleLoginChange}
-              className={styles.notResgitered}
+              className={styles.notRegistered}
+              type="button"
             >
-              Not Registered? sign up
+              Not Registered? Sign up
             </button>
           </>
         ) : (
-          //registration 
           <>
             <h3 className={styles.signin}>Sign Up</h3>
-            
-              <input
-              onChange={(event) => {
-                return setUsername(event.target.value);
-              }}
+            <p className={styles.desc}>Create an account to join the market.</p>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              className={styles.input}
+              placeholder="email"
+            />
+            <input
+              onChange={(e) => setUsername(e.target.value)}
               className={styles.input}
               placeholder="username"
             />
             <input
-              onChange={(event) => {
-                return setPassword(event.target.value);
-              }}
+              onChange={(e) => setPassword(e.target.value)}
               className={styles.input}
               type="password"
               placeholder="password"
             />
-            <button className={styles.button} type="submit">
+            <button className={styles.button} type="button" onClick={handleSignup}>
               Sign Up
             </button>
             <button
-            onClick={handleSignupChange}
-            className={styles.notResgitered}
+              onClick={handleLoginChange}
+              className={styles.notRegistered}
+              type="button"
             >
-            Already Registered? sign in
+              Already have an account? Sign in
             </button>
-            
-            
           </>
         )}
       </form>
     </main>
   );
 }
-

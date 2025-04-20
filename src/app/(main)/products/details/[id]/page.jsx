@@ -10,7 +10,7 @@ const page = async ({ params }) => {
     <div className={styles.wrapper}>
       <img className={styles.img} src={product.image} alt="product-image"/>
       <h1 className={styles.title}>{product.title}</h1>
-      <p>category : {product.category}</p>
+      <strong>category : {product.category}</strong>
       <p>{product.description}</p>
       <strong>${product.price}</strong>
       <strong>Rating : {product.rating.rate}⭐</strong>

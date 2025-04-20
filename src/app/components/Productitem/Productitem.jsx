@@ -7,13 +7,13 @@ function ProductItem({ item }) {
     <section className={styles.itemContainer}>
       <div>
         <div className={styles.imageContainer}>
-          <Image src={item.Image} width={224} alt="item-image" />
+          <Image src={item.image} width={224} alt="item-image" />
         </div>
-        <div>item სახელი</div>
+        <div>item name</div>
       </div>
       <div>
         <div>
-          <p>1600ლ</p>
+          <p>{item.price}</p>
           <p>120 ლარი ყოველთვიურად</p>
         </div>
         <Image src="globe.svg" alt="favorite-icon" />

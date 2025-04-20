@@ -6,7 +6,7 @@
   }
   
   .container {
-    background-color: red;
+    background-color: rgb(250, 13, 124);
     width: 400px;
     background-color: white;
     border-radius: 10px;
@@ -16,6 +16,7 @@
   .signin {
     font-size: 2rem;
     text-transform: uppercase;
+    color: black;
   }
   
   .desc {
@@ -42,7 +43,7 @@
     font-size: 1.2rem;
   }
   
-  .notResgitered {
+  .notRegistered {
     border: none;
     background-color: transparent;
     padding: 10px 20px 0px;
