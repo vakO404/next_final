@@ -100,7 +100,7 @@ export default function Home() {
             onClick={handleSignupChange}
             className={styles.notResgitered}
             >
-              Already Registered? sign in
+            Already Registered? sign in
             </button>
             
             
