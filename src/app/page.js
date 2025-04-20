@@ -74,15 +74,10 @@ export default function Home() {
             </button>
           </>
         ) : (
-
+          //registration 
           <>
             <h3 className={styles.signin}>Sign Up</h3>
-            <button
-              onClick={handleSignupChange}
-              className={styles.notResgitered}
-            >
-
-
+            
               <input
               onChange={(event) => {
                 return setUsername(event.target.value);
@@ -101,12 +96,18 @@ export default function Home() {
             <button className={styles.button} type="submit">
               Sign Up
             </button>
-
+            <button
+            onClick={handleSignupChange}
+            className={styles.notResgitered}
+            >
               Already Registered? sign in
             </button>
+            
+            
           </>
         )}
       </form>
     </main>
   );
 }
+
