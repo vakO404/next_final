@@ -24,7 +24,7 @@ export default function Home() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           username: username,
-          password: password,
+          password: "m38rmF$",
         }),
       })
         .then((res) => res.json())
