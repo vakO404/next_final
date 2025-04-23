@@ -1,7 +1,12 @@
-"use client";
+"use client"
+import styles from "./page.module.css"
 
-function loading() {
-  return <div>loading...</div>;
+function Loading() {
+  return (
+    <div className={styles.loading}>
+      <p>Loading ...</p>
+  </div>
+  )
 }
 
-export default loading;
+export default Loading;
