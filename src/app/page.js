@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -14,6 +14,19 @@ export default function Home() {
   const handleLoginChange = () => {
     return setLogin(!login);
   };
+
+  const checkIfUserExists = async () => {
+    const result = await JSON.parse(localStorage.getItem("user"));
+
+    if (result !== null) {
+      router.replace("/products", { path: "products" });
+    }
+  };
+
+  useEffect(() => {
+    checkIfUserExists();
+  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,6 +43,7 @@ export default function Home() {
         .then((res) => res.json())
         .then((res) => {
           if (res.token) {
+            localStorage.setItem("user", JSON.stringify(res.token));
             router.replace("/products", { path: "products" });
           }
         });

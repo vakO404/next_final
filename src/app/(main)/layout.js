@@ -6,13 +6,6 @@ import { usePathname } from "next/navigation";
 function layout({ children }) {
   const pathname = usePathname();
 
-  console.log("cleaned")
-  console.log("cleaned")
-  console.log("cleaned")
-  console.log("cleaned")
-  console.log("cleaned")
-  console.log("cleaned")
-
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
@@ -20,7 +13,9 @@ function layout({ children }) {
           className={`
             ${styles.link}
             ${
-              pathname.includes("/products") ? styles.activeLink : styles.inActiveLink
+              pathname.includes("/products")
+                ? styles.activeLink
+                : styles.inActiveLink
             }`}
           href="/products"
         >
@@ -29,11 +24,28 @@ function layout({ children }) {
         <Link
           className={`
             ${styles.link}
-            ${pathname.includes("/profile") ? styles.activeLink : styles.inActiveLink}
+            ${
+              pathname.includes("/profile")
+                ? styles.activeLink
+                : styles.inActiveLink
+            }
             `}
           href="/profile"
         >
           Profile
+        </Link>
+        <Link
+          className={`
+            ${styles.link}
+            ${
+              pathname.includes("/cart")
+                ? styles.activeLink
+                : styles.inActiveLink
+            }
+            `}
+          href="/cart"
+        >
+          Cart
         </Link>
       </nav>
       {children}
