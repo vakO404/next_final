@@ -1,3 +1,4 @@
+import AddToCart from "@/components/AddToCart/AddToCart";
 import styles from "./page.module.css";
 
 const page = async ({ params }) => {
@@ -14,7 +15,7 @@ const page = async ({ params }) => {
       <p>{product.description}</p>
       <strong>${product.price}</strong>
       <strong>Rating : {product.rating.rate}⭐</strong>
-
+    <AddToCart/>
     </div>
   );
 };
