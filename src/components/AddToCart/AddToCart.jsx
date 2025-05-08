@@ -1,6 +1,7 @@
 "use client";
 
 function AddToCart({ product }) {
+  console.log("product prop:", product);
   const handleAddCart = async () => {
     const results = await JSON.parse(localStorage.getItem("products"));
     if (results === null) {

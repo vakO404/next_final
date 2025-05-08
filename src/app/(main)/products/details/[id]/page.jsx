@@ -15,7 +15,7 @@ const page = async ({ params }) => {
       <p>{product.description}</p>
       <strong>${product.price}</strong>
       <strong>Rating : {product.rating.rate}⭐</strong>
-    <AddToCart/>
+    <AddToCart product={product} />
     </div>
   );
 };

@@ -21,6 +21,9 @@ export default function Home() {
     if (result !== null) {
       router.replace("/products", { path: "products" });
     }
+    // else{
+    //   router.replace("/cart", {path : "cart"})
+    // }
   };
 
   useEffect(() => {
@@ -54,7 +57,7 @@ export default function Home() {
 
   const handleSignup = () => {
     try {
-      fetch("https://fakestoreapi.com/users", {
+      fetch("https://fakestoreapi.com/users/1", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -81,6 +84,7 @@ export default function Home() {
         .then((res) => res.json())
         .then((res) => {
           if (res.id) {
+            localStorage.setItem("user", JSON.stringify(res.id)); 
             router.replace("/products");
           } else {
             alert("Signup failed");
