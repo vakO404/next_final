@@ -27,12 +27,17 @@ function page() {
   const handleRemoveOne = async (product) => {
     const products = await JSON.parse(localStorage.getItem("products"));
     const index = products.findIndex((item) => item.product.id === product.id);
-    products[index].count--;
-
+  
+    if (products[index].count > 1) {
+      products[index].count--;
+    } else {
+      products.splice(index, 1);
+    }
+  
     setCartProducts(products);
-    localStorage.setItem("products", JSON.stringify([...products]));
+    localStorage.setItem("products", JSON.stringify(products));
   };
-
+  
   return (
     <div className={styles.container}>
       {cartProducts?.map((prod) => (
@@ -49,10 +54,8 @@ function page() {
             <p>{prod.count} ცალი</p>
           </div>
           <div className={styles.buttonWrapper}>
-            <button onClick={() => handleAddOne(prod.product)}>add 1</button>
-            <button onClick={() => handleRemoveOne(prod.product)}>
-              remove 1
-            </button>
+            <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>add 1</button>
+            <button className={styles.cart} onClick={() => handleRemoveOne(prod.product)}>remove 1</button>
           </div>
         </div>
       ))}
