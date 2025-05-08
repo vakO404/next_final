@@ -17,18 +17,28 @@
     align-items: center;
 }
 
-.cart{
-    background-color: rgb(158, 156, 156);
-    gap: 40px;
-    display: flex;
-    width: 60px;
-    height: 30px;
-    border-radius: 7px;
-    padding-top : 0 auto;
-    margin: 10px;
-}
-
 .buttonWrapper{
     width: 100px;
-    height: 100px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.cart{
+    height: 40px;
+    width: 60px;
+    gap: 70px;
+}
+
+.count_txt{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+};
+
+.title_txt{
+    max-width: 10px;
 }

@@ -57,7 +57,7 @@ export default function Home() {
 
   const handleSignup = () => {
     try {
-      fetch("https://fakestoreapi.com/users/1", {
+      fetch("https://fakestoreapi.com/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

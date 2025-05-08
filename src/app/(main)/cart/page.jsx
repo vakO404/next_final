@@ -49,13 +49,13 @@ function page() {
             alt={prod.product.title}
           />
           <div>
-            <h4> {prod.product.title}</h4>
+            <h4 className={styles.title_txt}> {prod.product.title}</h4>
             <br />
-            <p>{prod.count} ცალი</p>
+            <p className={styles.count_txt}>{prod.count} ცალი</p>
           </div>
           <div className={styles.buttonWrapper}>
-            <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>add 1</button>
-            <button className={styles.cart} onClick={() => handleRemoveOne(prod.product)}>remove 1</button>
+            <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>+</button>
+            <button className={styles.cart} onClick={() => handleRemoveOne(prod.product)}>-</button>
           </div>
         </div>
       ))}
