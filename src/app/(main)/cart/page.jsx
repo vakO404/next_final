@@ -38,32 +38,36 @@ function page() {
     localStorage.setItem("products", JSON.stringify(products));
   };
   
-  return (
-    <div className={styles.container}>
-      {cartProducts?.map((prod) => (
-        <div key={prod.product.id} className={styles.itemWrapper}>
-          <Image
-            src={prod.product.image}
-            width={70}
-            height={70}
-            alt={prod.product.title}
-          />
+return (
+  <>
+    <div className={styles.cartHeader}>
+      <span>Product</span>
+      <span>Quantity</span>
+      <span>Price</span>
+    </div>
+      
+    {cartProducts?.map((prod) => (
+      <div key={prod.product.id} className={styles.itemWrapper}>
+        <div className={styles.productInfo}>
+          <Image src={prod.product.image} width={70} height={70} alt={prod.product.title} />
           <div>
-            <h4 className={styles.title_txt}> {prod.product.title}</h4>
-            <br />
-            <p className={styles.count_txt}>{prod.count} ცალი</p>
-            <br/>
-            <p className={styles.price_txt}>{prod.product.price * prod.count} ლᲐᲠი</p>
-
-          </div>
-          <div className={styles.buttonWrapper}>
-            <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>+</button>
-            <button className={styles.cart} onClick={() => handleRemoveOne(prod.product)}>-</button>
+            <p className={styles.title_txt}>{prod.product.title}</p>
           </div>
         </div>
-      ))}
-    </div>
-  );
+
+        <div className={styles.buttonWrapper}>
+          <button className={styles.cart} onClick={() => handleRemoveOne(prod.product)}>-</button>
+          <span>{prod.count}</span>
+          <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>+</button>
+        </div>
+
+        <div className={styles.price_txt}>
+          {prod.product.price * prod.count} ლარი
+        </div>
+      </div>
+    ))}
+  </>
+);
 }
 
 export default page;
