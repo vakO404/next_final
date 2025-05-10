@@ -2,17 +2,21 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import ProductItem from "@/components/ProductItem/ProductItem";
 
 
 function page() {
+  const router = useRouter();
   const [cartProducts, setCartProducts] = useState([]);
 
   const getProductsFromStorage = async () => {
     const products = await JSON.parse(localStorage.getItem("products"));
     setCartProducts(products);
   };
-
+  const handlechangepage = () => {
+   router.replace("/products");
+  }
   useEffect(() => {
     getProductsFromStorage();
   }, []);
@@ -59,16 +63,27 @@ return (
         </div>
     
         <div className={styles.price_txt}>
-          {prod.product.price * prod.count}
+          <span>{prod.product.price * prod.count} $</span>
         </div>
       </div>
     ))}
     </div>
-    <div className={styles.endContainer}>
-    <h2>ჯამი : {cartProducts.reduce((total, prod) => total + (prod.product.price * prod.count), 0)} ლარი</h2>
+    <div className={styles.parentContainer}>
+      <div  className={styles.endDiv}>
+        <div className={styles.endContainer}>
+          <h2>ჯამი : {cartProducts.reduce((total, prod) => total + (prod.product.price * prod.count), 0)} $</h2>
+          <div className={styles.endCont_btns}>
+            <button className={styles.endCont_btn}>Buy</button>
+            <button className={styles.endCont_btn}  onClick={handlechangepage}>Continue Shopping</button>
+        </div>
+        </div>
+      </div>
     </div>
+
+    
   </>
 );
 }
 
 export default page;
+

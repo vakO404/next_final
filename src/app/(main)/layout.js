@@ -53,4 +53,23 @@ function layout({ children }) {
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+    
+    <h2>Hell </h2>
+  </footer>
 export default layout;
