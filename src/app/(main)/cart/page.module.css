@@ -4,6 +4,7 @@
     flex-direction: column;
     padding: 140px 40px 0px;
     gap: 20px;
+    color: black;
 }
 
 .itemWrapper {
@@ -42,3 +43,5 @@
 .title_txt{
     max-width: 10px;
 }
+
+.price_

@@ -21,9 +21,6 @@ export default function Home() {
     if (result !== null) {
       router.replace("/products", { path: "products" });
     }
-    // else{
-    //   router.replace("/cart", {path : "cart"})
-    // }
   };
 
   useEffect(() => {

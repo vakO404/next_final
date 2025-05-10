@@ -52,6 +52,9 @@ function page() {
             <h4 className={styles.title_txt}> {prod.product.title}</h4>
             <br />
             <p className={styles.count_txt}>{prod.count} ცალი</p>
+            <br/>
+            <p className={styles.price_txt}>{prod.product.price * prod.count} ლᲐᲠი</p>
+
           </div>
           <div className={styles.buttonWrapper}>
             <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>+</button>
