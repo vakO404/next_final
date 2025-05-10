@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import ProductItem from "@/components/ProductItem/ProductItem";
+
 
 function page() {
   const [cartProducts, setCartProducts] = useState([]);
@@ -37,16 +39,11 @@ function page() {
     setCartProducts(products);
     localStorage.setItem("products", JSON.stringify(products));
   };
-  
 return (
   <>
-    <div className={styles.cartHeader}>
-      <span>Product</span>
-      <span>Quantity</span>
-      <span>Price</span>
-    </div>
-      
-    {cartProducts?.map((prod) => (
+  
+    <div className={styles.cartContainer}>
+      {cartProducts?.map((prod) => (
       <div key={prod.product.id} className={styles.itemWrapper}>
         <div className={styles.productInfo}>
           <Image src={prod.product.image} width={70} height={70} alt={prod.product.title} />
@@ -56,16 +53,20 @@ return (
         </div>
 
         <div className={styles.buttonWrapper}>
-          <button className={styles.cart} onClick={() => handleRemoveOne(prod.product)}>-</button>
+          <button className={styles.cart_btn} onClick={() => handleRemoveOne(prod.product)}>-</button>
           <span>{prod.count}</span>
-          <button className={styles.cart} onClick={() => handleAddOne(prod.product)}>+</button>
+          <button className={styles.cart_btn} onClick={() => handleAddOne(prod.product)}>+</button>
         </div>
-
+    
         <div className={styles.price_txt}>
-          {prod.product.price * prod.count} ლარი
+          {prod.product.price * prod.count}
         </div>
       </div>
     ))}
+    </div>
+    <div className={styles.endContainer}>
+    <h2>ჯამი : {cartProducts.reduce((total, prod) => total + (prod.product.price * prod.count), 0)} ლარი</h2>
+    </div>
   </>
 );
 }
