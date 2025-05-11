@@ -2,6 +2,9 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { usePathname } from "next/navigation";
+import Footer from "@/app/components/Footer";
+
+
 
 function layout({ children }) {
   const pathname = usePathname();
@@ -49,27 +52,10 @@ function layout({ children }) {
         </Link>
       </nav>
       {children}
+      <Footer/>
     </div>
   );
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <footer>
-    
-    <h2>Hell </h2>
-  </footer>
 export default layout;

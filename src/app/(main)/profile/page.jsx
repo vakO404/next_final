@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import SignOut from "@/components/SignOut/SignOut";
-import BasicFooter from "@/app/components/basicfooter";
+import Footer from "@/app/components/Footer";
 
 
 const Profile = async () => {
@@ -79,7 +79,5 @@ const Profile = async () => {
     </div>
   );
 };
-<BasicFooter/>
-
 
 export default Profile;

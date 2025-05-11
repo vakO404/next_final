@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import ProductItem from "@/components/ProductItem/ProductItem";
-import BasicFooter from "@/app/components/basicfooter";
+import Footer from "@/app/components/Footer";
 
 
 function page() {
@@ -80,8 +80,6 @@ return (
         </div>
       </div>
     </div>
-
-    <BasicFooter />
   </>
 );
 
