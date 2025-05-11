@@ -1,5 +1,7 @@
 import AddToCart from "@/components/AddToCart/AddToCart";
 import styles from "./page.module.css";
+import BasicFooter from "@/app/components/basicfooter";
+
 
 const page = async ({ params }) => {
   const id = params.id;
@@ -19,5 +21,7 @@ const page = async ({ params }) => {
     </div>
   );
 };
+<BasicFooter/>
+
 
 export default page;
