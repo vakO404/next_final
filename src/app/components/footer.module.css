@@ -1,0 +1,17 @@
+.footerParent {
+  background-color: red;
+  height: 30vh;
+}
+
+.footerChild {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: black;
+}
+
+.footerCont {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,6 +1,6 @@
 import AddToCart from "@/components/AddToCart/AddToCart";
 import styles from "./page.module.css";
-import BasicFooter from "@/app/components/basicfooter";
+import Footer from "@/app/components/Footer";
 
 
 const page = async ({ params }) => {
@@ -21,7 +21,6 @@ const page = async ({ params }) => {
     </div>
   );
 };
-<BasicFooter/>
 
 
 export default page;
