@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 
 function AddToCart({ product }) {
   const router = useRouter();
-  console.log("product prop:", product);
   const handleAddCart = async () => {
     const results = await JSON.parse(localStorage.getItem("products"));
     if (results === null) {
