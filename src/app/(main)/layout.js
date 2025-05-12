@@ -2,7 +2,6 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { usePathname } from "next/navigation";
-import Footer from "@/app/components/Footer";
 
 
 

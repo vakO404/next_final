@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import SignOut from "@/components/SignOut/SignOut";
-import Footer from "@/app/components/Footer";
 
 
 const Profile = async () => {

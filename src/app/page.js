@@ -48,7 +48,6 @@ export default function Home() {
           }
         });
     } catch (error) {
-      console.log(error.message);
     }
   };
 
@@ -88,7 +87,6 @@ export default function Home() {
           }
         });
     } catch (err) {
-      console.log(err.message);
     }
   };
 
