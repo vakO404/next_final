@@ -1,14 +1,19 @@
 .footerParent {
-  background-color: red;
-  height: 30vh;
+  background-color: rgb(141, 141, 141);
+
+  min-height: 80px;
+  width: 100%; 
+  overflow: hidden;
 }
 
 .footerChild {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 1rem;
   color: black;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .footerCont {

@@ -52,7 +52,6 @@ function layout({ children }) {
         </Link>
       </nav>
       {children}
-      <Footer/>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 .addToCart_btn{
     border-radius: 6px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(184, 181, 181);
     width: 80px;
     height: 30px;
+    color: black;
 }
 
 :hover.addToCart_btn{
-    background-color: rgb(194, 194, 194);
+    background-color: rgb(165, 165, 165);
     color: black;
 }
