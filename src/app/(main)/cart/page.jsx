@@ -72,7 +72,7 @@ return (
     <div className={styles.parentContainer}>
       <div  className={styles.endDiv}>
         <div className={styles.endContainer}>
-          <h2>ჯამი : {cartProducts.reduce((total, prod) => total + (prod.product.price * prod.count), 0)} $</h2>
+          <h2>ჯამი : {cartProducts?.reduce((total, prod) => total + (prod.product.price * prod.count), 0)} $</h2>
           <div className={styles.endCont_btns}>
             <button className={styles.endCont_btn}>Buy</button>
             <button className={styles.endCont_btn}  onClick={handlechangepage}>Continue Shopping</button>
